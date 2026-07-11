@@ -45,7 +45,7 @@ SFfigure <- function(data, locusname, annot = c(), flip.fig = 1,
     exon.annot <- c()
     chr <- ""
     dir <- "+"
-    if (class(annot) == "GRanges") {
+    if (is(annot, "GRanges")) {
         annot <- as.data.frame(annot)
     }
     if (is.data.frame(annot)) {
@@ -195,7 +195,7 @@ SFfigure <- function(data, locusname, annot = c(), flip.fig = 1,
                                    geom_rect(aes(NULL, NULL, xmin=s, xmax=e, fill=factor(p)),
                                              ymin=yrng[1]-yr*.1, ymax=yrng[2]+yr*.3, 
                                              data=exon.df, alpha=(1/5)*useAlpha, 
-                                             show_guide=F) +
+                                             show.legend=FALSE) +
                                                  scale_fill_manual(values=c("#FFCC99","#99FFFF")) +
         theme(axis.text.x=element_text(angle=90,vjust=1/2))
     }
@@ -212,7 +212,7 @@ SFfigure <- function(data, locusname, annot = c(), flip.fig = 1,
         
         tplot <- main.plot + 
             geom_line(aes(color=factor(sample),group=sample), 
-                      alpha=(1/2)^useAlpha, size=.4, show_guide=F) + 
+                      alpha=(1/2)^useAlpha, size=.4, show.legend=FALSE) + 
                           scale_color_hue(l=50, c=100) +
                               ggtitle(titlestr)
         if (!is.null(savestr)) {
