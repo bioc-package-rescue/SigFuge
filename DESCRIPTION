@@ -1,10 +1,12 @@
 Package: SigFuge
 Type: Package
 Title: SigFuge
-Version: 1.51.0
+Version: 1.51.1
 Date: 2021-11-21
-Author: Patrick Kimes, Christopher Cabanski
-Maintainer: Patrick Kimes <patrick.kimes@gmail.com>
+Authors@R: c(
+    person("Patrick", "Kimes", email = "patrick.kimes@gmail.com", role = c("aut", "cre")),
+    person("Christopher", "Cabanski", role = "aut")
+  )
 Description: Algorithm for testing significance of clustering in
         RNA-seq data.
 License: GPL-3

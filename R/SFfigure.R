@@ -45,7 +45,7 @@ SFfigure <- function(data, locusname, annot = c(), flip.fig = 1,
     exon.annot <- c()
     chr <- ""
     dir <- "+"
-    if (class(annot) == "GRanges") {
+    if (is(annot, "GRanges")) {
         annot <- as.data.frame(annot)
     }
     if (is.data.frame(annot)) {
